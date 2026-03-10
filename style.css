@@ -761,6 +761,7 @@ main.container {
     margin-top: 4px;
     display: grid;
     gap: 18px;
+    min-width: 0;
 }
 
 .gallery-panel {
@@ -769,6 +770,8 @@ main.container {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     box-shadow: var(--shadow-sm);
+    min-width: 0;
+    overflow: hidden;
 }
 
 .gallery-panel__title {
@@ -787,6 +790,17 @@ main.container {
 
 .gallery-panel .gallery {
     margin-top: 0;
+    min-width: 0;
+}
+
+.gallery-panel .gallery__viewport,
+.gallery-panel .gallery__track {
+    min-width: 0;
+    width: 100%;
+}
+
+.gallery--cert .gallery__viewport::after {
+    display: none;
 }
 
 .awards__grid {
@@ -1118,7 +1132,7 @@ main.container {
     }
 
     .gallery--cert .gallery__slide {
-        height: 440px;
+        height: 460px;
     }
 }
 
@@ -1167,7 +1181,7 @@ main.container {
     }
 
     .gallery--cert .gallery__slide {
-        height: 360px;
+        height: 390px;
     }
 }
 
@@ -1250,9 +1264,12 @@ main.container {
         height: 380px;
     }
 
-    .gallery__slide,
-    .gallery--cert .gallery__slide {
+    .gallery__slide {
         height: 270px;
+    }
+
+    .gallery--cert .gallery__slide {
+        height: 330px;
     }
 
     .gallery__btn {
@@ -1303,6 +1320,10 @@ main.container {
     .gallery__dot {
         width: 9px;
         height: 9px;
+    }
+
+    .gallery--cert .gallery__slide {
+        height: 300px;
     }
 
     .footer__inner {
